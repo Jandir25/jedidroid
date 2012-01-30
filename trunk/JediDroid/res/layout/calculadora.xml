@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/inputResult"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout2_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="true" >
+
+            <Button
+                android:id="@+id/buttonNumber1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number1" />
+
+            <Button
+                android:id="@+id/buttonNumber2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number2" />
+
+            <Button
+                android:id="@+id/buttonNumber3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number3" />
+
+            <Button
+                android:id="@+id/buttonSuma"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/suma" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="true" >
+
+            <Button
+                android:id="@+id/buttonNumber4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number4" />
+
+            <Button
+                android:id="@+id/buttonNumber5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number5" />
+
+            <Button
+                android:id="@+id/buttonNumber6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number6" />
+
+            <Button
+                android:id="@+id/buttonResta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/resta" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="true" >
+
+            <Button
+                android:id="@+id/buttonNumber7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number7" />
+
+            <Button
+                android:id="@+id/buttonNumber8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number8" />
+
+            <Button
+                android:id="@+id/buttonNumber9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number9" />
+
+            <Button
+                android:id="@+id/buttonMultiplicacio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/multiplicacio" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="true" >
+
+            <Button
+                android:id="@+id/buttonNumber01"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number0" />
+
+            <Button
+                android:id="@+id/buttonNumber0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number0" />
+
+            <Button
+                android:id="@+id/buttonNumber02"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/number0" />
+
+            <Button
+                android:id="@+id/buttonDivisio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/divisio" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
