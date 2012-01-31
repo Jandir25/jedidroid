@@ -12,6 +12,6 @@ public class JediDroidActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        startActivity(new Intent(getApplicationContext(), CalculadoraActivity.class));
+        startActivity(new Intent(getApplicationContext(), ReproductorActivity.class));
     }
 }
