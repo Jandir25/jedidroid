@@ -17,6 +17,10 @@ public class Calculadora {
 		return resultat;
 	}
 
+	public void setResultat(Double resultat) {
+		this.resultat = resultat;
+	}
+	
 	public boolean setResultat(Double resultat, TextView textView) {
 		if (this.operador == null) {
 			this.resultat = resultat;
