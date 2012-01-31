@@ -154,13 +154,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:baselineAligned="true" >
-
+
             <Button
                 android:id="@+id/buttonClearCalculator"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/clearCalculator"
+                android:textColor="@color/rojo"
                 android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
