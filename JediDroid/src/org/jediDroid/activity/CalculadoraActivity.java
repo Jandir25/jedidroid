@@ -173,50 +173,47 @@ public class CalculadoraActivity extends Activity {
 			Double valor = Double.valueOf(textView.getText().toString());
 			switch (v.getId()) {
 				case R.id.buttonSuma:
-					calculadora.setResultat(valor);
+					if (calculadora.setResultat(valor, textView)) {
+						textView.setText(calculadora.getResultat().toString());
+					}
 					calculadora.setOperador("+");
 					limpiar = true;
-					textView.setText(calculadora.getResultat().toString());
 					break;
 					
 				case R.id.buttonResta:
-					calculadora.setResultat(valor);
+					if (calculadora.setResultat(valor, textView)) {
+						textView.setText(calculadora.getResultat().toString());
+					}
 					calculadora.setOperador("-");
 					limpiar = true;
-					textView.setText(calculadora.getResultat().toString());
 					break;
 					
 				case R.id.buttonMultiplicacio:
-					calculadora.setResultat(valor);
+					if (calculadora.setResultat(valor, textView)) {
+						textView.setText(calculadora.getResultat().toString());
+					}
 					calculadora.setOperador("*");
 					limpiar = true;
-					textView.setText(calculadora.getResultat().toString());
 					break;
 					
 				case R.id.buttonDivisio:
-					if (valor == 0) {
-						calculadora.setResultat(null);
-						calculadora.setOperador(null);
-						limpiar = true;
-						textView.setText("ERROR!");
-					}
-					else {
-						calculadora.setResultat(valor);
-						calculadora.setOperador("/");
-						limpiar = true;
+					if (calculadora.setResultat(valor, textView)) {
 						textView.setText(calculadora.getResultat().toString());
 					}
+					calculadora.setOperador("/");
+					limpiar = true;
 					break;
 					
 				case R.id.buttonIgual:
-					calculadora.setResultat(valor);
+					if (calculadora.setResultat(valor, textView)) {
+						textView.setText(calculadora.getResultat().toString());
+					}
 					calculadora.setOperador(null);
 					limpiar = true;
-					textView.setText(calculadora.getResultat().toString());
 					break;
 					
 				case R.id.buttonClearCalculator:
-					calculadora.setResultat(null);
+					calculadora.setResultat(null, textView);
 					calculadora.setOperador(null);
 					limpiar = true;
 					textView.setText("0");
