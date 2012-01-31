@@ -1,5 +1,7 @@
 package org.jediDroid.activity;
 
+import org.jediDroid.domain.Calculadora;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +13,8 @@ import android.widget.TextView;
 public class CalculadoraActivity extends Activity {
 	protected static final String LOG = "JediDroid - CalculadoraActivity";
 	
-	String resultat = "0";
+	Calculadora calculadora = new Calculadora();
+	boolean limpiar = true;
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -19,10 +22,11 @@ public class CalculadoraActivity extends Activity {
 		Log.v(LOG, "onCreate");
 
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.calculadora);
 		
 		TextView inputResult = (TextView) findViewById(R.id.inputResult);
-		inputResult.setText(resultat);
-		setContentView(R.layout.calculadora);
+		inputResult.setText("0");
+		
 		
 		/* Defino los listeners */
 		MyListenerOnClick listener = new MyListenerOnClick();
@@ -116,12 +120,6 @@ public class CalculadoraActivity extends Activity {
 		
 	/* Funciones privadas */
 	
-	/**
-	 * Logica al pulsar un numero.
-	 * @param v
-	 * @param textView
-	 * @return true: Si se ha pulsado un numero
-	 */
 	private boolean pulsacioNumero(View v, TextView textView) {
 		switch (v.getId()) {
 			case R.id.buttonNumber0:
@@ -172,7 +170,57 @@ public class CalculadoraActivity extends Activity {
 	
 	private boolean pulsacioOperador(View v, TextView textView) {
 		if (comprobarCampos(textView)) {
+			Double valor = Double.valueOf(textView.getText().toString());
 			switch (v.getId()) {
+				case R.id.buttonSuma:
+					calculadora.setResultat(valor);
+					calculadora.setOperador("+");
+					limpiar = true;
+					textView.setText(calculadora.getResultat().toString());
+					break;
+					
+				case R.id.buttonResta:
+					calculadora.setResultat(valor);
+					calculadora.setOperador("-");
+					limpiar = true;
+					textView.setText(calculadora.getResultat().toString());
+					break;
+					
+				case R.id.buttonMultiplicacio:
+					calculadora.setResultat(valor);
+					calculadora.setOperador("*");
+					limpiar = true;
+					textView.setText(calculadora.getResultat().toString());
+					break;
+					
+				case R.id.buttonDivisio:
+					if (valor == 0) {
+						calculadora.setResultat(null);
+						calculadora.setOperador(null);
+						limpiar = true;
+						textView.setText("ERROR!");
+					}
+					else {
+						calculadora.setResultat(valor);
+						calculadora.setOperador("/");
+						limpiar = true;
+						textView.setText(calculadora.getResultat().toString());
+					}
+					break;
+					
+				case R.id.buttonIgual:
+					calculadora.setResultat(valor);
+					calculadora.setOperador(null);
+					limpiar = true;
+					textView.setText(calculadora.getResultat().toString());
+					break;
+					
+				case R.id.buttonClearCalculator:
+					calculadora.setResultat(null);
+					calculadora.setOperador(null);
+					limpiar = true;
+					textView.setText("0");
+					break;
 			}
 		}
 		
@@ -186,13 +234,12 @@ public class CalculadoraActivity extends Activity {
 		return true;			
 	}
 	
-	/**
-	 * Añade el parametro 'numero' al string de la 'vista'
-	 * @param numero
-	 * @param vista
-	 */
 	private void añadirNumero(String numero, TextView vista) {
 		String aux = vista.getText().toString();
+		if (limpiar) {
+			limpiar = false;
+			aux = "";
+		}
 		aux = aux.concat(numero);
 		vista.setText(aux);
 	}

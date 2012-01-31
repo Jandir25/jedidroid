@@ -9,11 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
-
+
         <TextView
             android:id="@+id/inputResult"
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:gravity="right"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </LinearLayout>
