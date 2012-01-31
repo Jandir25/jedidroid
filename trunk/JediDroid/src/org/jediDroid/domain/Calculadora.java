@@ -1,5 +1,7 @@
 package org.jediDroid.domain;
 
+import android.widget.TextView;
+
 public class Calculadora {
 
 	Double resultat;
@@ -15,7 +17,7 @@ public class Calculadora {
 		return resultat;
 	}
 
-	public void setResultat(Double resultat) {
+	public boolean setResultat(Double resultat, TextView textView) {
 		if (this.operador == null) {
 			this.resultat = resultat;
 		}
@@ -30,12 +32,15 @@ public class Calculadora {
 				this.resultat *= resultat;
 			}
 			else if (this.operador == "/") {
-				if (resultat != 0) {
-					this.resultat /= resultat;
+				if (resultat == 0) {
+					textView.setText("ERROR!");
+					return false;
 				}
+				this.resultat /= resultat;
 			}
 			
 		}
+		return true;
 	}
 
 	public String getOperador() {
