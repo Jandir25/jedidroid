@@ -21,6 +21,9 @@
         </activity>
         
         <activity android:name="CalculadoraActivity"></activity>
+        <activity android:name="ReproductorActivity"></activity>
+        
+        <service android:name="org.jediDroid.service.ReproductorService"></service>
     </application>
 
 </manifest>
