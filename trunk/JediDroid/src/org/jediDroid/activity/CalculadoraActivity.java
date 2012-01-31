@@ -236,7 +236,7 @@ public class CalculadoraActivity extends Activity {
 				break;
 
 			case R.id.buttonClearCalculator:
-				calculadora.setResultat(null, textView);
+				calculadora.setResultat(null);
 				calculadora.setOperador(null);
 				limpiar = true;
 				textView.setText("0");
