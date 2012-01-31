@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="tamanyNumerosTeclasCalculadora">20dp</dimen>
+    <dimen name="tamanyNumerosTeclasCalculadora">25dp</dimen>
+    <dimen name="tamanyResultatCalculadora">45dp</dimen>
     
 </resources>
