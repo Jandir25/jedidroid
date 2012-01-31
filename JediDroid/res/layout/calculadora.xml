@@ -138,7 +138,7 @@
             android:baselineAligned="true" >
 
             <Button
-                android:id="@+id/buttonNumber01"
+                android:id="@+id/buttonClearCalculator"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -150,13 +150,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/number0" />
-
+
             <Button
-                android:id="@+id/buttonNumber02"
+                android:id="@+id/buttonIgual"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/number00" />
+                android:text="@string/igual" />
 
             <Button
                 android:id="@+id/buttonDivisio"
