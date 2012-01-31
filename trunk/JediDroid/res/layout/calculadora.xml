@@ -31,34 +31,38 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:baselineAligned="true" >
-
+
             <Button
                 android:id="@+id/buttonNumber1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/number1" />
+                android:text="@string/number1"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonNumber2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/number2" />
+                android:text="@string/number2"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonNumber3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/number3" />
+                android:text="@string/number3"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonSuma"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/suma" />
+                android:text="@string/suma"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
         </LinearLayout>
 
@@ -74,28 +78,32 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/number4" />
+                android:text="@string/number4"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonNumber5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/number5" />
+                android:text="@string/number5"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonNumber6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/number6" />
+                android:text="@string/number6"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonResta"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/resta" />
+                android:text="@string/resta"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
         </LinearLayout>
 
@@ -111,28 +119,32 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/number7" />
+                android:text="@string/number7"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonNumber8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/number8" />
+                android:text="@string/number8"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonNumber9"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/number9" />
+                android:text="@string/number9"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonMultiplicacio"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/multiplicacio" />
+                android:text="@string/multiplicacio"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
         </LinearLayout>
 
@@ -148,28 +160,32 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/clearCalculator" />
+                android:text="@string/clearCalculator"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonNumber0"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/number0" />
+                android:text="@string/number0"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonIgual"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/igual" />
+                android:text="@string/igual"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
             <Button
                 android:id="@+id/buttonDivisio"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/divisio" />
+                android:text="@string/divisio"
+                android:textSize="@dimen/tamanyNumerosTeclasCalculadora" />
 
         </LinearLayout>
     </LinearLayout>
