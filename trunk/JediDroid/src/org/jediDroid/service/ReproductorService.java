@@ -6,6 +6,7 @@ import java.io.IOException;
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Binder;
 import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
@@ -14,7 +15,7 @@ import android.util.Log;
 public class ReproductorService extends Service {
 	protected static final String LOG = "JediDroid - ReproductorService";
 	MediaPlayer mediaPlayer;
-	Thread thread;
+	private final IBinder binder = new MyBinder();
 
 	public void onCreate() {
 		Log.v(LOG, "onCreateService");
@@ -40,21 +41,7 @@ public class ReproductorService extends Service {
 	}
 	
 	public int onStartCommand(Intent intent, int flags, int startId){
-			
-		/* Play y pause con un thread */
 		Log.v(LOG, "onStartCommand");
-			new Thread(new Runnable() {
-				public void run() {
-					if (mediaPlayer.isPlaying()) {
-						Log.v(LOG, "Pause");
-						mediaPlayer.pause();
-					}
-					else {
-						Log.v(LOG, "Start");
-						mediaPlayer.start();
-					}
-				}
-			}).start();
 		return START_STICKY;
 
 	}
@@ -69,8 +56,43 @@ public class ReproductorService extends Service {
 		
 	}
 
+	/* Cuando se asocie una actividad */
 	@Override
 	public IBinder onBind(Intent intent) {
-		return null;
+		return binder;
+	}
+	
+	
+	public class MyBinder extends Binder {
+		public ReproductorService getService() {
+			return ReproductorService.this;
+		}
+	}
+	
+	public boolean isPlaying() {
+		return mediaPlayer.isPlaying();
+	}
+	
+	public void play() {
+		Log.v(LOG, "Play");
+		mediaPlayer.start();
+	}
+	
+	public void pause() {
+		Log.v(LOG, "Pause");
+		mediaPlayer.pause();
+		
+	}
+
+	public void stop() {
+		Log.v(LOG, "Stop");
+		mediaPlayer.stop();
+		try {
+			mediaPlayer.prepare();
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
