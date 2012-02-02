@@ -19,21 +19,32 @@ public class JediDroidActivity extends TabActivity {
 		setContentView(R.layout.tabs);
 		mTabHost = getTabHost();       
        mResources = getResources();
-       addTabUno();
-       addTabDos();        
+       addTabCalculadora();
+       addTabMusic();    
+       addTabMemory();
        mTabHost.setCurrentTab(0);   
-    }	private void addTabUno() {
+    }	
+	
+	private void addTabCalculadora() {
 		Intent intent = new Intent(this, CalculadoraActivity.class);
-		TabSpec spec = mTabHost.newTabSpec("Texto Tab1");
+		TabSpec spec = mTabHost.newTabSpec("Calculadora");
 		spec.setIndicator("Calculadora", mResources.getDrawable(android.R.drawable.ic_menu_agenda));
 		spec.setContent(intent);
 		mTabHost.addTab(spec);
 	}
 
-	private void addTabDos() {
+	private void addTabMusic() {
 		Intent intent = new Intent(this, ReproductorActivity.class);
-		TabSpec spec = mTabHost.newTabSpec("Texto Tab2");
+		TabSpec spec = mTabHost.newTabSpec("Music");
 		spec.setIndicator("Music", mResources.getDrawable(android.R.drawable.ic_menu_gallery));
+		spec.setContent(intent);
+		mTabHost.addTab(spec);
+	}
+	
+	private void addTabMemory() {
+		Intent intent = new Intent(this, MemoryActivity.class);
+		TabSpec spec = mTabHost.newTabSpec("Memory");
+		spec.setIndicator("Memory", mResources.getDrawable(android.R.drawable.ic_menu_gallery));
 		spec.setContent(intent);
 		mTabHost.addTab(spec);
 	}
