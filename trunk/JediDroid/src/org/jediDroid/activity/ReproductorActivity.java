@@ -34,6 +34,7 @@ public class ReproductorActivity extends Activity {
 		
 		@Override
 		public void onServiceConnected(ComponentName name, IBinder service) {
+			Log.v(LOG, "onServiceConnected");
 			MyBinder binder = (MyBinder) service;
 			bService = binder.getService();
 			bound = true;
@@ -62,7 +63,14 @@ public class ReproductorActivity extends Activity {
 		startService(intent);
 		
 		/* Me asocio al servicio */
-		bindService(intent, connection, Context.BIND_AUTO_CREATE);
+		/* Se tiene que poner 'getApplicationContext()' para que busque 
+		 * el 'bindService' en todo el contexto de la aplicacion y no solo en el contexto de la activity.
+		 * 
+		 * Como tenemos TABS hay decirle al 'bindService' que 
+		 * el servicio que busca esta en la aplicacion. Si no se lo pones, solo buscara en el contexto de la Activity
+		 * y queremos que busque en todo el contexto de la aplicacion.
+		 */
+		getApplicationContext().bindService(intent, connection, Context.BIND_AUTO_CREATE);
 		
 	}
 	
