@@ -205,7 +205,6 @@ public class MemoryActivity extends Activity {
 			guardarAcierto(i);
 		}
 		ultimaDestapada = null;
-		destapades.toString();
 		limpiarPantalla();
 		return;
 		
@@ -214,7 +213,7 @@ public class MemoryActivity extends Activity {
 	
 	private void guardarAcierto(Integer acertada) {
 		for (int i = 0; i < 12; ++i) {
-			if (cartes.get(i) == acertada) {
+			if (cartes.get(i).equals(acertada)) {
 				destapades.set(i, true);
 			}
 		}
