@@ -20,5 +20,6 @@
     <string name="clearCalculator">C</string>
     <string name="igual">=</string>
     <string name="music">Music</string>
+    <string name="ranking">Ranking</string>
 
 </resources>

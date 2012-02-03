@@ -3,9 +3,15 @@ package org.jediDroid.activity;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.jediDroid.domain.BBDD;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -17,7 +23,9 @@ public class MemoryActivity extends Activity {
 	ArrayList<Integer> cartes = new ArrayList<Integer>();
 	Integer ultimaDestapada = null;
 	Integer fallos = 0;
-	
+	Boolean touch = true;
+	Integer ultimaDestapadaCarta = null;
+	BBDD db = null;
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -57,6 +65,7 @@ public class MemoryActivity extends Activity {
 		carta32.setOnClickListener(listener);
 		
 		inicializaValors();
+		
 	}
 	
 	/* MyListeners */
@@ -65,92 +74,151 @@ public class MemoryActivity extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			ImageView destapada;
-			switch (v.getId()) {
-				case R.id.carta00:
-					destapada = (ImageView) findViewById(R.id.carta00);
-					destapada.setImageResource(cartes.get(0));
-					comprobarAcierto(cartes.get(0));
-					break;
-					
-				case R.id.carta01:
-					destapada = (ImageView) findViewById(R.id.carta01);
-					destapada.setImageResource(cartes.get(1));
-					comprobarAcierto(cartes.get(1));
-					break;									
-					
-				case R.id.carta02:
-					destapada = (ImageView) findViewById(R.id.carta02);
-					destapada.setImageResource(cartes.get(2));
-					comprobarAcierto(cartes.get(2));
-					break;	
-									
-				case R.id.carta10:
-					destapada = (ImageView) findViewById(R.id.carta10);
-					destapada.setImageResource(cartes.get(3));
-					comprobarAcierto(cartes.get(3));
-					break;
-					
-				case R.id.carta11:
-					destapada = (ImageView) findViewById(R.id.carta11);
-					destapada.setImageResource(cartes.get(4));
-					comprobarAcierto(cartes.get(4));
-					break;
-					
-				case R.id.carta12:
-					destapada = (ImageView) findViewById(R.id.carta12);
-					destapada.setImageResource(cartes.get(5));
-					comprobarAcierto(cartes.get(5));
-					break;
-					
-				case R.id.carta20:
-					destapada = (ImageView) findViewById(R.id.carta20);
-					destapada.setImageResource(cartes.get(6));
-					comprobarAcierto(cartes.get(6));
-					break;
-					
-				case R.id.carta21:
-					destapada = (ImageView) findViewById(R.id.carta21);
-					destapada.setImageResource(cartes.get(7));
-					comprobarAcierto(cartes.get(7));
-					break;
-					
-				case R.id.carta22:
-					destapada = (ImageView) findViewById(R.id.carta22);
-					destapada.setImageResource(cartes.get(8));
-					comprobarAcierto(cartes.get(8));
-					break;
-					
-				case R.id.carta30:
-					destapada = (ImageView) findViewById(R.id.carta30);
-					destapada.setImageResource(cartes.get(9));
-					comprobarAcierto(cartes.get(9));
-					break;
-					
-				case R.id.carta31:
-					destapada = (ImageView) findViewById(R.id.carta31);
-					destapada.setImageResource(cartes.get(10));
-					comprobarAcierto(cartes.get(10));
-					break;
-
-				case R.id.carta32:
-					destapada = (ImageView) findViewById(R.id.carta32);
-					destapada.setImageResource(cartes.get(11));
-					comprobarAcierto(cartes.get(11));
-					break;
-
+			if (touch) {
+				ImageView destapada;
+				switch (v.getId()) {
+					case R.id.carta00:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta00) {
+							ultimaDestapadaCarta = R.id.carta00;
+							destapada = (ImageView) findViewById(R.id.carta00);
+							destapada.setImageResource(cartes.get(0));
+							comprobarAcierto(cartes.get(0));
+						}
+						break;
+						
+					case R.id.carta01:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta01) {
+							ultimaDestapadaCarta = R.id.carta01;
+							destapada = (ImageView) findViewById(R.id.carta01);
+							destapada.setImageResource(cartes.get(1));
+							comprobarAcierto(cartes.get(1));
+						}
+						break;									
+						
+					case R.id.carta02:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta02) {
+							ultimaDestapadaCarta = R.id.carta02;
+							destapada = (ImageView) findViewById(R.id.carta02);
+							destapada.setImageResource(cartes.get(2));
+							comprobarAcierto(cartes.get(2));
+						}
+						break;	
+										
+					case R.id.carta10:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta10) {
+							ultimaDestapadaCarta = R.id.carta10;
+							destapada = (ImageView) findViewById(R.id.carta10);
+							destapada.setImageResource(cartes.get(3));
+							comprobarAcierto(cartes.get(3));
+						}
+						break;
+						
+					case R.id.carta11:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta11) {
+							ultimaDestapadaCarta = R.id.carta11;
+							destapada = (ImageView) findViewById(R.id.carta11);
+							destapada.setImageResource(cartes.get(4));
+							comprobarAcierto(cartes.get(4));
+						}
+						break;
+						
+					case R.id.carta12:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta12) {
+							ultimaDestapadaCarta = R.id.carta12;
+							destapada = (ImageView) findViewById(R.id.carta12);
+							destapada.setImageResource(cartes.get(5));
+							comprobarAcierto(cartes.get(5));
+						}
+						break;
+						
+					case R.id.carta20:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta20) {
+							ultimaDestapadaCarta = R.id.carta20;
+							destapada = (ImageView) findViewById(R.id.carta20);
+							destapada.setImageResource(cartes.get(6));
+							comprobarAcierto(cartes.get(6));
+						}
+						break;
+						
+					case R.id.carta21:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta21) {
+							ultimaDestapadaCarta = R.id.carta21;
+							destapada = (ImageView) findViewById(R.id.carta21);
+							destapada.setImageResource(cartes.get(7));
+							comprobarAcierto(cartes.get(7));
+						}
+						break;
+						
+					case R.id.carta22:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta22) {
+							ultimaDestapadaCarta = R.id.carta22;
+							destapada = (ImageView) findViewById(R.id.carta22);
+							destapada.setImageResource(cartes.get(8));
+							comprobarAcierto(cartes.get(8));
+						}
+						break;
+						
+					case R.id.carta30:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta30) {
+							ultimaDestapadaCarta = R.id.carta30;
+							destapada = (ImageView) findViewById(R.id.carta30);
+							destapada.setImageResource(cartes.get(9));
+							comprobarAcierto(cartes.get(9));
+						}
+						break;
+						
+					case R.id.carta31:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta31) {
+							ultimaDestapadaCarta = R.id.carta31;
+							destapada = (ImageView) findViewById(R.id.carta31);
+							destapada.setImageResource(cartes.get(10));
+							comprobarAcierto(cartes.get(10));
+						}
+						break;
+	
+					case R.id.carta32:
+						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta32) {
+							ultimaDestapadaCarta = R.id.carta32;
+							destapada = (ImageView) findViewById(R.id.carta32);
+							destapada.setImageResource(cartes.get(11));
+							comprobarAcierto(cartes.get(11));
+						}
+						break;
+	
+				}
+	
+				Log.v(LOG, "Destapades: " + destapades.toString());
 			}
-
-			Log.v(LOG, "Destapades: " + destapades.toString());
 		}
 
 	}
+	
+	/* Menu */
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.menu_ranking, menu);
+		return true;
+	}
+	
+	 public boolean onOptionsItemSelected(MenuItem item) {
+		 if (item.getItemId() == R.id.ranking) {
+			startActivity(new Intent(getApplicationContext(), RankingActivity.class));
+			return true;
+		 }
+		 return false;
+	 }
 	
 	/* Privades */
 	
 	private void inicializaValors() {
 		destapades = new ArrayList<Boolean>();
 		cartes = new ArrayList<Integer>();
+		db = new BBDD(getApplicationContext());
+		ultimaDestapada = null;
+		fallos = 0;
+		touch = true;
+		ultimaDestapadaCarta = null;
+
 		
 		for (int i = 0; i < 12; ++i) {
 			destapades.add(false);
@@ -172,6 +240,8 @@ public class MemoryActivity extends Activity {
 			}
 		}
 		Log.v(LOG, "Cartes: " + cartes.toString());
+		limpiarPantalla();
+		
 	}
 	
 	private Integer idCartes(Integer i) {
@@ -206,15 +276,14 @@ public class MemoryActivity extends Activity {
 		if (ultimaDestapada.equals(i)) {
 			guardarAcierto(i);
 			/* Comprobamos si hemos ganado */
-			if (!destapades.contains(false)) {
-				Toast t = Toast.makeText(getApplicationContext(), fallos.toString() + " fallos", Toast.LENGTH_LONG);
-				t.show();
-			}
+			winner();
 		}
 		else {
 			++fallos;
 		}
+		ultimaDestapadaCarta = null;
 		ultimaDestapada = null;
+		touch = false;
 		limpiarPantalla();
 		return;
 		
@@ -298,8 +367,40 @@ public class MemoryActivity extends Activity {
 					carta32.setImageResource(R.drawable.interrogante);
 				}
 				
+				touch = true;
 			}
 		},1000);		
 	}
+	
+	private void winner() {
+		if (!destapades.contains(false)) {
+			touch = false;
+			Toast t = Toast.makeText(getApplicationContext(), fallos.toString() + " fallos", Toast.LENGTH_LONG);
+			t.show();
+			db.insertNewPartida(getApplicationContext(), "root", fallos);
+		}
+	}
+	
+
+    	
+    	
+
+    	
+	/*
+	private void registroRanking() {
+		BBDD db = new BBDD(getApplicationContext());
+		SQLiteDatabase instantDb = db.getReadableDatabase();
+		 
+		instantDb.execSQL(sql);
+		Cursor c = instantDb.rawQuery("SELECE ", null);
+		 c = instantDb.query(kfdjs, sdlfk, *, selectionArgs, groupBy, having, orderBy);
+		 
+		 this.startManagingCursor(c);
+		 String[] columnas = {"usuari", "puntuacio"};
+		 //int[] idViews = R.id
+		 SimpleCursorAdapter sca = new SimpleCursorAdapter(getApplicationContext(), R.layout.row, c, columnas, );
+		
+		
+	}*/
 	
 }
