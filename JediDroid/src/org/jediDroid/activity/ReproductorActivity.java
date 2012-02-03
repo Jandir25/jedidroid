@@ -9,6 +9,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -73,6 +74,14 @@ public class ReproductorActivity extends Activity {
 		 */
 		getApplicationContext().bindService(intent, connection, Context.BIND_AUTO_CREATE);
 		
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		Log.v(LOG, "onResume");
+		/* Permitimos el giro de pantalla */
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 	}
 	
 	/* Listeners */

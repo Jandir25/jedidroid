@@ -80,6 +80,8 @@ public class CalculadoraActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		Log.v(LOG, "onResume");
+		/* Bloqueamos el giro de pantalla */
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	}
 
 	@Override

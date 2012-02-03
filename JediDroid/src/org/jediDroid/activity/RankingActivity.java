@@ -4,6 +4,7 @@ package org.jediDroid.activity;
 import org.jediDroid.domain.BBDD;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -29,10 +30,15 @@ public class RankingActivity extends Activity{
 		String[] from = {"usuari", "fallos"};
 		int[] to = { R.id.nomRankingElement, R.id.puntuacioRankingElement };
 		SimpleCursorAdapter sca = new SimpleCursorAdapter(getApplicationContext(), R.layout.ranking_element, c, from, to);
-		listView.setAdapter(sca);
-
-
-		
+		listView.setAdapter(sca);	
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		Log.v(LOG, "onResume");
+		/* Permitimos el giro de pantalla */
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 	}
 
 }

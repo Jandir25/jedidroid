@@ -25,8 +25,6 @@ public class JediDroidActivity extends TabActivity {
 		addTabMusic();    
 		addTabMemory();
 		mTabHost.setCurrentTab(0);   
-		/* Bloqueamos el giro de pantalla */
-//		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }	
 	
 	private void addTabCalculadora() {
