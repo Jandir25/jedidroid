@@ -20,6 +20,7 @@ import android.widget.ImageView;
 
 
 public class ReproductorActivity extends Activity {
+	
 	protected static final String LOG = "JediDroid - ReproductorActivity";
 	protected ReproductorService bService;
 	protected boolean bound;
@@ -44,7 +45,7 @@ public class ReproductorActivity extends Activity {
 	/** Called when the activity is first created. */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
+		Log.v(LOG, "onCreate");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.reproductor);
 		
