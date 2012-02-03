@@ -91,7 +91,7 @@ public class MemoryActivity extends Activity {
 				ImageView destapada;
 				switch (v.getId()) {
 					case R.id.carta00:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta00) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta00) && (destapades.get(0) != true)) {
 							ultimaDestapadaCarta = R.id.carta00;
 							destapada = (ImageView) findViewById(R.id.carta00);
 							destapada.setImageResource(cartes.get(0));
@@ -100,7 +100,7 @@ public class MemoryActivity extends Activity {
 						break;
 						
 					case R.id.carta01:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta01) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta01) && (destapades.get(1) != true)) {
 							ultimaDestapadaCarta = R.id.carta01;
 							destapada = (ImageView) findViewById(R.id.carta01);
 							destapada.setImageResource(cartes.get(1));
@@ -109,7 +109,7 @@ public class MemoryActivity extends Activity {
 						break;									
 						
 					case R.id.carta02:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta02) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta02) && (destapades.get(2) != true)) {
 							ultimaDestapadaCarta = R.id.carta02;
 							destapada = (ImageView) findViewById(R.id.carta02);
 							destapada.setImageResource(cartes.get(2));
@@ -118,7 +118,7 @@ public class MemoryActivity extends Activity {
 						break;	
 										
 					case R.id.carta10:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta10) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta10) && (destapades.get(3) != true)) {
 							ultimaDestapadaCarta = R.id.carta10;
 							destapada = (ImageView) findViewById(R.id.carta10);
 							destapada.setImageResource(cartes.get(3));
@@ -127,7 +127,7 @@ public class MemoryActivity extends Activity {
 						break;
 						
 					case R.id.carta11:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta11) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta11) && (destapades.get(4) != true)) {
 							ultimaDestapadaCarta = R.id.carta11;
 							destapada = (ImageView) findViewById(R.id.carta11);
 							destapada.setImageResource(cartes.get(4));
@@ -136,7 +136,7 @@ public class MemoryActivity extends Activity {
 						break;
 						
 					case R.id.carta12:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta12) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta12) && (destapades.get(5) != true)) {
 							ultimaDestapadaCarta = R.id.carta12;
 							destapada = (ImageView) findViewById(R.id.carta12);
 							destapada.setImageResource(cartes.get(5));
@@ -145,7 +145,7 @@ public class MemoryActivity extends Activity {
 						break;
 						
 					case R.id.carta20:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta20) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta20) && (destapades.get(6) != true)) {
 							ultimaDestapadaCarta = R.id.carta20;
 							destapada = (ImageView) findViewById(R.id.carta20);
 							destapada.setImageResource(cartes.get(6));
@@ -154,7 +154,7 @@ public class MemoryActivity extends Activity {
 						break;
 						
 					case R.id.carta21:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta21) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta21) && (destapades.get(7) != true)) {
 							ultimaDestapadaCarta = R.id.carta21;
 							destapada = (ImageView) findViewById(R.id.carta21);
 							destapada.setImageResource(cartes.get(7));
@@ -163,7 +163,7 @@ public class MemoryActivity extends Activity {
 						break;
 						
 					case R.id.carta22:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta22) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta22) && (destapades.get(8) != true)) {
 							ultimaDestapadaCarta = R.id.carta22;
 							destapada = (ImageView) findViewById(R.id.carta22);
 							destapada.setImageResource(cartes.get(8));
@@ -172,7 +172,7 @@ public class MemoryActivity extends Activity {
 						break;
 						
 					case R.id.carta30:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta30) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta30) && (destapades.get(9) != true)) {
 							ultimaDestapadaCarta = R.id.carta30;
 							destapada = (ImageView) findViewById(R.id.carta30);
 							destapada.setImageResource(cartes.get(9));
@@ -181,7 +181,7 @@ public class MemoryActivity extends Activity {
 						break;
 						
 					case R.id.carta31:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta31) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta31) && (destapades.get(10) != true)) {
 							ultimaDestapadaCarta = R.id.carta31;
 							destapada = (ImageView) findViewById(R.id.carta31);
 							destapada.setImageResource(cartes.get(10));
@@ -190,7 +190,7 @@ public class MemoryActivity extends Activity {
 						break;
 	
 					case R.id.carta32:
-						if (ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta32) {
+						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta32) && (destapades.get(11) != true)) {
 							ultimaDestapadaCarta = R.id.carta32;
 							destapada = (ImageView) findViewById(R.id.carta32);
 							destapada.setImageResource(cartes.get(11));
@@ -401,20 +401,20 @@ public class MemoryActivity extends Activity {
     	
 	
 	 public Dialog createDialog() {
-	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	    	builder.setTitle("Winner");
-	    	builder.setMessage("Fallos: " + fallos);
-	    	builder.setCancelable(false);
-	    	builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
-	    		public void onClick(DialogInterface dialog, int id) {
-	    			inicializaValors();
-	    			dialog.cancel();
-	    		}
-	    	});
-	    	
-	    	AlertDialog alert = builder.create();
-	    	return alert;
-	    }   
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	builder.setTitle("Winner");
+    	builder.setMessage("Fallos: " + fallos);
+    	builder.setCancelable(false);
+    	builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+    		public void onClick(DialogInterface dialog, int id) {
+    			inicializaValors();
+    			dialog.cancel();
+    		}
+    	});
+    	
+    	AlertDialog alert = builder.create();
+    	return alert;
+    }   
 
     	
 	/*
