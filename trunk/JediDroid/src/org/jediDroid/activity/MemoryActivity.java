@@ -9,12 +9,14 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MemoryActivity extends Activity {
 	protected static final String LOG = "JediDroid - MemoryActivity";
 	ArrayList<Boolean> destapades = new ArrayList<Boolean>();
 	ArrayList<Integer> cartes = new ArrayList<Integer>();
 	Integer ultimaDestapada = null;
+	Integer fallos = 0;
 	
 	
 	/** Called when the activity is first created. */
@@ -203,6 +205,14 @@ public class MemoryActivity extends Activity {
 		
 		if (ultimaDestapada.equals(i)) {
 			guardarAcierto(i);
+			/* Comprobamos si hemos ganado */
+			if (!destapades.contains(false)) {
+				Toast t = Toast.makeText(getApplicationContext(), fallos.toString() + " fallos", Toast.LENGTH_LONG);
+				t.show();
+			}
+		}
+		else {
+			++fallos;
 		}
 		ultimaDestapada = null;
 		limpiarPantalla();
@@ -221,66 +231,75 @@ public class MemoryActivity extends Activity {
 	}
 	
 	private void limpiarPantalla() {
-		if (destapades.get(0) != true) {
-			ImageView carta00 = (ImageView) findViewById(R.id.carta00);
-			carta00.setImageResource(R.drawable.interrogante);
-		}
 		
-		if (destapades.get(1) != true) {
-			ImageView carta01 = (ImageView) findViewById(R.id.carta01);
-			carta01.setImageResource(R.drawable.interrogante);
-		}
+		// Asociamos el thread a cualquier elemento de la vista.
+		ImageView idElementView = (ImageView) findViewById(R.id.carta00);
+		idElementView.postDelayed(new Runnable() {
 		
-		if (destapades.get(2) != true) {
-			ImageView carta02 = (ImageView) findViewById(R.id.carta02);
-			carta02.setImageResource(R.drawable.interrogante);
-		}
-		
-		if (destapades.get(3) != true) {
-			ImageView carta10 = (ImageView) findViewById(R.id.carta10);
-			carta10.setImageResource(R.drawable.interrogante);
-		}
-		
-		if (destapades.get(4) != true) {
-			ImageView carta11 = (ImageView) findViewById(R.id.carta11);
-			carta11.setImageResource(R.drawable.interrogante);
-		}
-		
-		if (destapades.get(5) != true) {
-			ImageView carta12 = (ImageView) findViewById(R.id.carta12);
-			carta12.setImageResource(R.drawable.interrogante);
-		}
-		
-		if (destapades.get(6) != true) {
-			ImageView carta20 = (ImageView) findViewById(R.id.carta20);
-			carta20.setImageResource(R.drawable.interrogante);
-		}
-		
-		if (destapades.get(7) != true) {
-			ImageView carta21 = (ImageView) findViewById(R.id.carta21);
-			carta21.setImageResource(R.drawable.interrogante);
-		}
-		
-		if (destapades.get(8) != true) {
-			ImageView carta22 = (ImageView) findViewById(R.id.carta22);
-			carta22.setImageResource(R.drawable.interrogante);
-		}
-		
-		if (destapades.get(9) != true) {
-			ImageView carta30 = (ImageView) findViewById(R.id.carta30);
-			carta30.setImageResource(R.drawable.interrogante);
-		}
-		
-		if (destapades.get(10) != true) {
-			ImageView carta31 = (ImageView) findViewById(R.id.carta31);
-			carta31.setImageResource(R.drawable.interrogante);
-		}
-		
-		if (destapades.get(11) != true) {
-			ImageView carta32 = (ImageView) findViewById(R.id.carta32);
-			carta32.setImageResource(R.drawable.interrogante);
-		}
-		
+			@Override
+			public void run() {
+				if (destapades.get(0) != true) {
+					ImageView carta00 = (ImageView) findViewById(R.id.carta00);
+					carta00.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(1) != true) {
+					ImageView carta01 = (ImageView) findViewById(R.id.carta01);
+					carta01.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(2) != true) {
+					ImageView carta02 = (ImageView) findViewById(R.id.carta02);
+					carta02.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(3) != true) {
+					ImageView carta10 = (ImageView) findViewById(R.id.carta10);
+					carta10.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(4) != true) {
+					ImageView carta11 = (ImageView) findViewById(R.id.carta11);
+					carta11.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(5) != true) {
+					ImageView carta12 = (ImageView) findViewById(R.id.carta12);
+					carta12.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(6) != true) {
+					ImageView carta20 = (ImageView) findViewById(R.id.carta20);
+					carta20.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(7) != true) {
+					ImageView carta21 = (ImageView) findViewById(R.id.carta21);
+					carta21.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(8) != true) {
+					ImageView carta22 = (ImageView) findViewById(R.id.carta22);
+					carta22.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(9) != true) {
+					ImageView carta30 = (ImageView) findViewById(R.id.carta30);
+					carta30.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(10) != true) {
+					ImageView carta31 = (ImageView) findViewById(R.id.carta31);
+					carta31.setImageResource(R.drawable.interrogante);
+				}
+				
+				if (destapades.get(11) != true) {
+					ImageView carta32 = (ImageView) findViewById(R.id.carta32);
+					carta32.setImageResource(R.drawable.interrogante);
+				}
+				
+			}
+		},1000);		
 	}
 	
 }
