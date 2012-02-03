@@ -23,6 +23,7 @@
         <activity android:name="CalculadoraActivity"></activity>
         <activity android:name="ReproductorActivity"></activity>
         <activity android:name="MemoryActivity"></activity>
+        <activity android:name="RankingActivity"></activity>
         
         <service android:name="org.jediDroid.service.ReproductorService"></service>
     </application>
