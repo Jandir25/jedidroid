@@ -10,6 +10,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -70,6 +71,14 @@ public class MemoryActivity extends Activity {
 		
 		inicializaValors();
 		
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		Log.v(LOG, "onResume");
+		/* Bloqueamos el giro de pantalla */
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	}
 	
 	/* MyListeners */
