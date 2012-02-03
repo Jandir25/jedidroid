@@ -1,28 +1,32 @@
 package org.jediDroid.activity;
 
-import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
 public class JediDroidActivity extends TabActivity {
 	static private TabHost mTabHost;
 	private Resources mResources;
-	static private Activity gActivity = null;
+	protected static final String LOG = "JediDroid - JediDroidActivity";
+
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
+		Log.v(LOG, "onCreate");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tabs);
 		mTabHost = getTabHost();       
-       mResources = getResources();
-       addTabCalculadora();
-       addTabMusic();    
-       addTabMemory();
-       mTabHost.setCurrentTab(0);   
+		mResources = getResources();
+		addTabCalculadora();
+		addTabMusic();    
+		addTabMemory();
+		mTabHost.setCurrentTab(0);   
+		/* Bloqueamos el giro de pantalla */
+//		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }	
 	
 	private void addTabCalculadora() {

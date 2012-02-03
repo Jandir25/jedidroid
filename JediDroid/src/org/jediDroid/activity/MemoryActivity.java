@@ -6,6 +6,9 @@ import java.util.Random;
 import org.jediDroid.domain.BBDD;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
-import android.widget.Toast;
+
 
 public class MemoryActivity extends Activity {
 	protected static final String LOG = "JediDroid - MemoryActivity";
@@ -26,14 +29,15 @@ public class MemoryActivity extends Activity {
 	Boolean touch = true;
 	Integer ultimaDestapadaCarta = null;
 	BBDD db = null;
+	Integer DIALOG_WINNER = 0;
 	
 	/** Called when the activity is first created. */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-
+		Log.v(LOG, "onCreate");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.memory);
-
+		
 
 		/* Defino los listeners */
 		MyListenerOnClick listener = new MyListenerOnClick();
@@ -375,15 +379,33 @@ public class MemoryActivity extends Activity {
 	private void winner() {
 		if (!destapades.contains(false)) {
 			touch = false;
-			Toast t = Toast.makeText(getApplicationContext(), fallos.toString() + " fallos", Toast.LENGTH_LONG);
-			t.show();
 			db.insertNewPartida(getApplicationContext(), "root", fallos);
+			showDialog(DIALOG_WINNER);
 		}
 	}
 	
 
+	protected Dialog onCreateDialog(int id) {
     	
+    	return createDialog();
+    }	
     	
+	
+	 public Dialog createDialog() {
+	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	    	builder.setTitle("Winner");
+	    	builder.setMessage("Fallos: " + fallos);
+	    	builder.setCancelable(false);
+	    	builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+	    		public void onClick(DialogInterface dialog, int id) {
+	    			inicializaValors();
+	    			dialog.cancel();
+	    		}
+	    	});
+	    	
+	    	AlertDialog alert = builder.create();
+	    	return alert;
+	    }   
 
     	
 	/*

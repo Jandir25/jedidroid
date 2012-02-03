@@ -3,6 +3,7 @@ package org.jediDroid.activity;
 import org.jediDroid.domain.Calculadora;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -64,6 +65,9 @@ public class CalculadoraActivity extends Activity {
 		divisio.setOnClickListener(listener);
 		igual.setOnClickListener(listener);
 		clear.setOnClickListener(listener);
+		
+		/* Bloqueamos el giro de pantalla */
+		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	}
 
 	@Override
