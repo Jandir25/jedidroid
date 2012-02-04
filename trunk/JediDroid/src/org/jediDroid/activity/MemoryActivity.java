@@ -426,7 +426,7 @@ public class MemoryActivity extends Activity {
 	private void winner() {
 		if (!destapades.contains(false)) {
 			touch = false;
-			db.insertNewPartida(getApplicationContext(), "root", fallos);
+			db.insertNewPartida(getApplicationContext(), "user", fallos);
 			showDialog(DIALOG_WINNER);
 		}
 	}
