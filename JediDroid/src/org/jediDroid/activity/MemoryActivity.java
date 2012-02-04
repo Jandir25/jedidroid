@@ -36,6 +36,7 @@ public class MemoryActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		Log.v(LOG, "onCreate");
+		touch = false;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.memory);
 		
@@ -70,15 +71,17 @@ public class MemoryActivity extends Activity {
 		carta32.setOnClickListener(listener);
 		
 		inicializaValors();
-		
+		touch = true;		
 	}
 	
 	@Override
 	protected void onResume() {
+		touch = false;
 		super.onResume();
 		Log.v(LOG, "onResume");
 		/* Bloqueamos el giro de pantalla */
 		this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		touch = true;
 	}
 	
 	/* MyListeners */
