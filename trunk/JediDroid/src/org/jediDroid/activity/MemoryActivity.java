@@ -27,7 +27,7 @@ public class MemoryActivity extends Activity {
 	ArrayList<Integer> cartes = new ArrayList<Integer>();
 	Integer ultimaDestapada = null;
 	Integer fallos = 0;
-	Boolean touch = true;
+	Boolean touch = false;
 	Integer ultimaDestapadaCarta = null;
 	BBDD db = null;
 	Integer DIALOG_WINNER = 0;
@@ -267,7 +267,6 @@ public class MemoryActivity extends Activity {
 		db = new BBDD(getApplicationContext());
 		ultimaDestapada = null;
 		fallos = 0;
-		touch = true;
 		ultimaDestapadaCarta = null;
 
 		
@@ -292,6 +291,7 @@ public class MemoryActivity extends Activity {
 		}
 		Log.v(LOG, "Cartes: " + cartes.toString());
 		limpiarPantalla();
+		touch = true;
 		
 	}
 	
@@ -420,7 +420,7 @@ public class MemoryActivity extends Activity {
 				
 				touch = true;
 			}
-		},1000);		
+		},500);		
 	}
 	
 	private void winner() {
