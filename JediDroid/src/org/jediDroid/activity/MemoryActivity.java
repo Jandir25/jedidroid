@@ -220,6 +220,44 @@ public class MemoryActivity extends Activity {
 		 }
 		 return false;
 	 }
+	 
+	 /* Dialog */
+	 
+	 /* Funcion que se llama al crear el dialog */
+	 protected Dialog onCreateDialog(int id) {
+		Log.v(LOG, "onCreateDialog");
+		return createDialog();
+		
+	}	
+		
+	
+	 private Dialog createDialog() {
+		 Log.v(LOG, "createDialog");
+		 AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		 builder.setTitle("Winner");
+		 builder.setMessage("Fallos: " + fallos);
+		 builder.setCancelable(false);
+		 builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				inicializaValors();
+				dialog.cancel();
+			}
+		});
+		
+		AlertDialog alert = builder.create();
+		return alert;
+	}
+	 
+	 
+	 /* Funcion que se llama cada vez que se muestra el dialog */
+	 @Override
+	 protected void onPrepareDialog(int id, Dialog dialog) {
+		 Log.v(LOG, "onPrepareDialog");
+		 AlertDialog alertDialog = (AlertDialog)dialog;
+         alertDialog.setMessage("Fallos: " + fallos);
+             
+	 }
+
 	
 	/* Privades */
 	
@@ -393,28 +431,6 @@ public class MemoryActivity extends Activity {
 		}
 	}
 	
-
-	protected Dialog onCreateDialog(int id) {
-    	
-    	return createDialog();
-    }	
-    	
-	
-	 public Dialog createDialog() {
-    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    	builder.setTitle("Winner");
-    	builder.setMessage("Fallos: " + fallos);
-    	builder.setCancelable(false);
-    	builder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
-    		public void onClick(DialogInterface dialog, int id) {
-    			inicializaValors();
-    			dialog.cancel();
-    		}
-    	});
-    	
-    	AlertDialog alert = builder.create();
-    	return alert;
-    }   
 
     	
 	/*
