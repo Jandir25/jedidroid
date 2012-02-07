@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
+/* Activity del juego memorys */
 
 public class MemoryActivity extends Activity {
 	protected static final String LOG = "JediDroid - MemoryActivity";
@@ -97,6 +98,7 @@ public class MemoryActivity extends Activity {
 						if ((ultimaDestapadaCarta == null || ultimaDestapadaCarta != R.id.carta00) && (destapades.get(0) != true)) {
 							ultimaDestapadaCarta = R.id.carta00;
 							destapada = (ImageView) findViewById(R.id.carta00);
+							/* Damos vuelta a la carta */
 							destapada.setImageResource(cartes.get(0));
 							comprobarAcierto(cartes.get(0));
 						}
@@ -355,7 +357,8 @@ public class MemoryActivity extends Activity {
 	
 	private void limpiarPantalla() {
 		
-		// Asociamos el thread a cualquier elemento de la vista.
+		/* Asociamos el thread a cualquier elemento de la vista.
+		 * El 500, indica que esperar medio segundo a iniciar el thread */
 		ImageView idElementView = (ImageView) findViewById(R.id.carta00);
 		idElementView.postDelayed(new Runnable() {
 		
