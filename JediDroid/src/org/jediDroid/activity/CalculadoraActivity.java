@@ -11,6 +11,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+/* Activity de la calculadora */
+
 public class CalculadoraActivity extends Activity {
 	protected static final String LOG = "JediDroid - CalculadoraActivity";
 
@@ -26,6 +28,7 @@ public class CalculadoraActivity extends Activity {
 		setContentView(R.layout.calculadora);
 
 		TextView inputResult = (TextView) findViewById(R.id.inputResult);
+		/* Modificar el texto de un TextView */
 		inputResult.setText("0");
 
 		/* Defino los listeners */

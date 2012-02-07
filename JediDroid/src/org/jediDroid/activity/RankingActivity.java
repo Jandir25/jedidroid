@@ -12,6 +12,8 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
+/* Activity del ranking */
+
 public class RankingActivity extends Activity{
 	protected static final String LOG = "JediDroid - RankingActivity";
 	
@@ -20,12 +22,15 @@ public class RankingActivity extends Activity{
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ranking);
-		
+		/* Creamos una instancia de la BBDD */
 		BBDD db = new BBDD(getApplicationContext());
 		SQLiteDatabase instantDb = db.getReadableDatabase();
+		
+		/* Para poder utilizar el adapter debemos de hacer siempre un SELECT de id y darle nombre _id */
 		Cursor c = instantDb.rawQuery("SELECT id _id, usuari, fallos FROM ranking ORDER BY fallos ASC ", null);
 		startManagingCursor(c);
 		
+		/* Introducimos en el ListView los resultados del SELECT */
 		ListView listView = (ListView) findViewById(R.id.listRanking);
 		String[] from = {"usuari", "fallos"};
 		int[] to = { R.id.nomRankingElement, R.id.puntuacioRankingElement };

@@ -34,6 +34,7 @@ public class ReproductorActivity extends Activity {
 			bound = false;
 		}
 		
+		
 		@Override
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			Log.v(LOG, "onServiceConnected");
