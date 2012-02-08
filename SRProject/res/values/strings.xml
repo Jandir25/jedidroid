@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, SRProjectActivity!</string>
+    <string name="app_name">XaviPau</string>
+    <string name="suma">+</string>
+    <string name="resta">-</string>
+    <string name="multiplicacio">*</string>
+    <string name="divisio">/</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="zero">0</string>
+    <string name="factorial">!</string>
+    <string name="igual">=</string>
+    <string name="back">B</string>
+    <string name="coma">.</string>
+    <string name="Play">Now Playing :  </string>
+    <string name="login">Login</string>
+    <string name="close">Close</string>
+    <string name="gpslat">Latitude:</string>
+    <string name="gpslong">Longitude:</string>
+    <string name="gpsgeo">Address:</string>
+    <string name="derp">  </string>
+    <string name="loggedfix">Logged as :</string>
+    <string name="loggeduser"></string>
+    <string name="makeph">Take Photo</string>
+    <string name="getgalery">Get From Galery</string>
+    <string name="fuckthisshit">Galery</string>
+    <string name="omglol">Photo</string>
+             
+    
+             
+
+</resources>

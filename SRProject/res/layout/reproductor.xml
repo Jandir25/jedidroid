@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/song" >
+
+        <ImageView
+            android:id="@+id/PlayMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/play" />
+
+        <ImageView
+            android:id="@+id/PauseMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/PlayMusic"
+            android:layout_toLeftOf="@+id/PlayMusic"
+            android:src="@drawable/pause" />
+
+        <ImageView
+            android:id="@+id/PrevMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/PauseMusic"
+            android:layout_toLeftOf="@+id/PauseMusic"
+            android:src="@drawable/prev" />
+
+        <ImageView
+            android:id="@+id/NextMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/PlayMusic"
+            android:layout_toRightOf="@+id/PlayMusic"
+            android:src="@drawable/next" />
+
+        <SeekBar
+            android:id="@+id/ProgressMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/PlayMusic"
+            android:layout_alignLeft="@+id/PrevMusic"
+            android:layout_alignRight="@+id/NextMusic" />
+
+        <CheckedTextView
+            android:id="@+id/PlayText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/Play" 
+           android:textColor="#000000"
+       android:textStyle="bold"/>
+
+        <CheckedTextView
+            android:id="@+id/PlaySong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/PlayText"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/linearLayout1"
+            android:layout_toRightOf="@+id/PlayText" 
+                   android:textColor="#000000"
+       android:textStyle="bold"/>
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/linearLayout1"
+            android:choiceMode="singleChoice"
+            android:drawSelectorOnTop="true"
+            android:scrollingCache="true"
+            android:smoothScrollbar="false" 
+            android:cacheColorHint="#00000000">
+
+        </ListView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/ProgressMusic"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/invi" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/twiticon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/PrevMusic"
+            android:src="@drawable/twittericon" />
+
+    </RelativeLayout>
+
+</LinearLayout>
