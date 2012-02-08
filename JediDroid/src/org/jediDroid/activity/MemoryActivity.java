@@ -436,24 +436,4 @@ public class MemoryActivity extends Activity {
 			showDialog(DIALOG_WINNER);
 		}
 	}
-	
-
-    	
-	/*
-	private void registroRanking() {
-		BBDD db = new BBDD(getApplicationContext());
-		SQLiteDatabase instantDb = db.getReadableDatabase();
-		 
-		instantDb.execSQL(sql);
-		Cursor c = instantDb.rawQuery("SELECE ", null);
-		 c = instantDb.query(kfdjs, sdlfk, *, selectionArgs, groupBy, having, orderBy);
-		 
-		 this.startManagingCursor(c);
-		 String[] columnas = {"usuari", "puntuacio"};
-		 //int[] idViews = R.id
-		 SimpleCursorAdapter sca = new SimpleCursorAdapter(getApplicationContext(), R.layout.row, c, columnas, );
-		
-		
-	}*/
-	
 }

@@ -2,6 +2,8 @@ package org.jediDroid.domain;
 
 import android.widget.TextView;
 
+/* Clase calculadora */
+
 public class Calculadora {
 
 	Double resultat;
