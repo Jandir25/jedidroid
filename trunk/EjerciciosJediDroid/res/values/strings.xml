@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, JediDroidActivity!</string>
+    <string name="app_name">EjerciciosJediDroid</string>
+    <string name="button">Button</string>
+    <string name="suma">Suma</string>
+    <string name="resta">Resta</string>
+    <string name="multiplicacio">Multiplicació</string>
+    <string name="divisio">Divisió</string>
+    <string name="llamar">Llamar</string>
+    <string name="contacts">Contactos</string>
+    <string name="notificacion">Notificacion</string>
+    <string name="newService">Nuevo servicio</string>
+    <string name="stopService">Parar Servicio</string>
+    <string name="fichero">Fichero</string>
+
+</resources>
