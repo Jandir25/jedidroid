@@ -17,13 +17,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-
-
+/* Activity del reproductor */
 
 public class ReproductorActivity extends Activity {
 	
 	protected static final String LOG = "JediDroid - ReproductorActivity";
 	protected ReproductorService bService;
+	/* Variable que nos indica si estamos conectados o no */
 	protected boolean bound;
 	
 	private ServiceConnection connection = new ServiceConnection() {
