@@ -155,43 +155,43 @@ public class CalculadoraActivity extends Activity {
 	private boolean pulsacioNumero(View v, TextView textView) {
 		switch (v.getId()) {
 		case R.id.buttonNumber0:
-			añadirNumero("0", textView);
+			anadirNumero("0", textView);
 			break;
 
 		case R.id.buttonNumber1:
-			añadirNumero("1", textView);
+			anadirNumero("1", textView);
 			break;
 
 		case R.id.buttonNumber2:
-			añadirNumero("2", textView);
+			anadirNumero("2", textView);
 			break;
 
 		case R.id.buttonNumber3:
-			añadirNumero("3", textView);
+			anadirNumero("3", textView);
 			break;
 
 		case R.id.buttonNumber4:
-			añadirNumero("4", textView);
+			anadirNumero("4", textView);
 			break;
 
 		case R.id.buttonNumber5:
-			añadirNumero("5", textView);
+			anadirNumero("5", textView);
 			break;
 
 		case R.id.buttonNumber6:
-			añadirNumero("6", textView);
+			anadirNumero("6", textView);
 			break;
 
 		case R.id.buttonNumber7:
-			añadirNumero("7", textView);
+			anadirNumero("7", textView);
 			break;
 
 		case R.id.buttonNumber8:
-			añadirNumero("8", textView);
+			anadirNumero("8", textView);
 			break;
 
 		case R.id.buttonNumber9:
-			añadirNumero("9", textView);
+			anadirNumero("9", textView);
 			break;
 
 		default:
@@ -263,7 +263,7 @@ public class CalculadoraActivity extends Activity {
 		return true;
 	}
 
-	private void añadirNumero(String numero, TextView vista) {
+	private void anadirNumero(String numero, TextView vista) {
 		String aux = vista.getText().toString();
 		if (limpiar) {
 			limpiar = false;
